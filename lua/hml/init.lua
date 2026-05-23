@@ -14,8 +14,6 @@ function M.setup(opts)
 
     require("hml.signs").setup()
 	require("hml.autocmd").setup(M.update)
-
-    vim.notify(vim.inspect(state.opts))
 end
 
 function M.update()
