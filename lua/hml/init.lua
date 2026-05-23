@@ -3,8 +3,6 @@ local M = {}
 local defaults = require("hml.config")
 local state = require("hml.state")
 
-vim.notify(vim.inspect(state.opts))
-
 function M.setup(opts)
     state.opts = vim.tbl_deep_extend(
         "force",
