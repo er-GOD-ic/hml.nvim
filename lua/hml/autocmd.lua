@@ -5,8 +5,6 @@ function M.setup(callback)
         "BufEnter",
         "BufWinEnter",
         "WinScrolled",
-        "CursorMoved",
-        "CursorMovedI",
     }, {
         callback = callback,
     })
