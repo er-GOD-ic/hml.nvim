@@ -1,5 +1,7 @@
 local M = {}
 
+local state = require("hml.state")
+
 local defined = false
 
 local function is_hex(str)
@@ -93,12 +95,12 @@ local function resolve_highlight(name, value)
     return hl_name
 end
 
-function M.setup(opts)
+function M.setup()
     if defined then
         return
     end
 
-    opts = opts or {}
+    local opts = state.opts
 
     local highlights = opts.highlight or {}
     local signs = opts.signs or {}
