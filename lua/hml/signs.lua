@@ -13,8 +13,6 @@ function M.setup()
     local highlights = opts.highlights
     local signs = opts.signs
 
-    print("current highlights:", vim.inspect(highlights))
-
     for name, spec in pairs(highlights) do
         vim.api.nvim_set_hl(0, name, spec)
     end
