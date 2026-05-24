@@ -2,50 +2,25 @@
 
 Minimal H / M / L viewport markers for Neovim.
 
-`hml.nvim` places lightweight line markers for:
+`hml.nvim` places lightweight line markers for cursor jumps to the home (top), middle, and last (bottom) rows of the window.
 
-* **H** → upper viewport position
-* **M** → middle viewport position
-* **L** → lower viewport position
+- H (High): Jumps to the home (top) row of the window.
+- M (Middle): Jumps to the middle row of the window.
+- L (Low): Jumps to the last (bottom) row of the window.
 
-The markers follow scrolling in real time and can be customized with native Neovim highlight definitions.
-
----
+This plugin **highlights the row number** for **each jump location**.
 
 ## Features
 
-* Minimal and lightweight
-* Native sign + numhl based rendering
-* Real-time viewport tracking
-* Colorscheme friendly
-* Fully configurable highlights
-* Lazy.nvim compatible
-* No external dependencies
-
----
+- ⌛️ Minimal and lightweight. No external dependencies
+- ✏️ Native sign + numhl based rendering
+- ⏱️ Real-time viewport tracking
+- 🖌️ Colorscheme friendly
+- ⚙️ Fully configurable highlights
+- 🐱 Lazy.nvim compatible
 
 ## Preview
-
-```text
- 120 │ function setup()
- 121 │ local state = {}
- 122 │
- 123 │ function M.update()
- 124 │ end
- 125 │
- 126 │ return M
-     ▲ H
-
- 140 │ local mid = math.floor(...)
-     ■ M
-
- 162 │ vim.api.nvim_create_autocmd(...)
-     ▼ L
-```
-
----
-
-# Installation
+![hml.nvim preview](./images/preview.png)
 
 ## lazy.nvim
 
@@ -62,6 +37,27 @@ The markers follow scrolling in real time and can be customized with native Neov
 # Configuration
 
 All highlight definitions use native `vim.api.nvim_set_hl()` specs.
+
+also, you can write your own custom highlights or link to existing ones like so:
+```lua
+{
+    "er-GOD-ic/hml.nvim",
+
+    opts = {
+        highlights = {
+            HmlNumH = {
+                fr = "#ff0000",
+                bold = true,
+            },
+
+            HmlNumM = {
+                link = "ErrorMsg",
+            },
+        },
+    },
+}
+```
+
 
 ## Default configuration
 
@@ -98,4 +94,7 @@ All highlight definitions use native `vim.api.nvim_set_hl()` specs.
             text = "",
             texthl = "",
             numhl = "HmlNumL",
+        },
+    },
+}
 ```
