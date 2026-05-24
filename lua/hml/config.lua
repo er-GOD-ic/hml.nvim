@@ -1,15 +1,35 @@
-local M = {
-	highlight = {
-		h = "Directory",
-		m = "Directory",
-		l = "Directory",
-	},
+return {
+    highlights = {
+        HmlNumH = {
+            link = "Directory",
+        },
 
-	signs = {
-		h = "",
-		m = "",
-		l = "",
-	},
+        HmlNumM = {
+            link = "Directory",
+        },
+
+        HmlNumL = {
+            link = "Directory",
+        },
+    },
+
+    signs = {
+        HmlSignH = {
+            text = "",
+            texthl = "",
+            numhl = "HmlNumH",
+        },
+
+        HmlSignM = {
+            text = "",
+            texthl = "",
+            numhl = "HmlNumM",
+        },
+
+        HmlSignL = {
+            text = "",
+            texthl = "",
+            numhl = "HmlNumL",
+        },
+    },
 }
-
-return M
