@@ -3,8 +3,8 @@ local M = {}
 local defaults = require("hml.config")
 local state = require("hml.state")
 
-local function merge_highlights(defaults, user)
-    return vim.tbl_extend("force", defaults, user or {})
+local function merge_highlights(default_hilights, user)
+    return vim.tbl_extend("force", default_hilights, user or {})
 end
 
 function M.setup(opts)
