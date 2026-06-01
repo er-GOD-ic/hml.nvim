@@ -26,7 +26,7 @@ This plugin **highlights the row number** for **each jump location**.
 
 ```lua
 {
-    "er-GOD-ic/hml.nvim",
+    "ergodice/hml.nvim",
 
     opts = {},
 }
@@ -41,7 +41,7 @@ All highlight definitions use native `vim.api.nvim_set_hl()` specs.
 also, you can write your own custom highlights or link to existing ones like so:
 ```lua
 {
-    "er-GOD-ic/hml.nvim",
+    "ergodice/hml.nvim",
 
     opts = {
         highlights = {
